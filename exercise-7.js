@@ -1,26 +1,15 @@
-/**
- * Bismillahirohmanirohim
- * Aditya Nugroho Subono Batch 39 Majestik
- * UrutkanAbjad
- * */
 function urutkanAbjad(str) {
-    // you can only write your code here!
-    var nilaiAscii =0;
-    var nilaiHuruf='';
-    var temp=[]
-    for(var i=0; i < str.length; i++){
-        //console.log(str[i])
-        nilaiAscii=Number(str.charCodeAt(i));
-        //console.log(nilaiAscii)
-        temp.sort().push(nilaiAscii);
-    }
-    for(var j=0; j<temp.length; j++){
-        //console.log(temp[j])
-        nilaiHuruf += String.fromCharCode(temp[j]);
-        //console.log(nilaiHuruf)
-    }
-return nilaiHuruf
+    var result = str.split('')
 
+    for(var i = 0; i < result.length; i++){
+        var target = result[i]
+        for(var j = i - 1; j >= 0 && (result[j] > target); j--){
+            result[j+1] = result[j]
+        }
+        result[j+1] = target
+    }
+    var hasil = result.join('')
+    return hasil
 }
 
 // TEST CASES

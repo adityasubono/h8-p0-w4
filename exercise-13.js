@@ -12,6 +12,7 @@ function deepSum (arr) {
         for (let j = 0; j < arr[i].length; j++) {
             for (let k = 0; k < arr[i][j].length; k++) {
                 sum += arr[i][j][k]
+                    //console.log('IJK =',arr[2][0][1])
             }
         }
     }
